@@ -1,0 +1,28 @@
+---
+
+---
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta name="description" content="Get in touch with us through our contact page."/>
+</head>
+<body>
+<nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+</nav>
+<h1>Contact Us</h1>
+<form action="/submit-contact" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required/>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required/>
+
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+
+    <button type="submit">Send Message</button>
+</form>
+</body>
