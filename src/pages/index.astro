@@ -1,43 +1,32 @@
 ---
-import Navbar from "../components/Navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
 // Server Only
 const name: string = "Astro";
-const title: string = "Welcome to Astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
-  </head>
-  <body>
-    <Navbar />
-    <h1>{name}</h1>
-    <p>Momento Actual: {new Date().toLocaleTimeString()}</p>
-    <p id="moment">Momento Actual Real:</p>
-    <footer>
-      <p>© {new Date().getFullYear()} My Astro Site</p>
-    </footer>
-    <script>
-      // Client Only
+<MainLayout title="Home Page">
+  <h1>{name}</h1>
+  <p>Momento Actual: {new Date().toLocaleTimeString()}</p>
+  <p id="moment">Momento Actual Real:</p>
+  <footer>
+    <p>© {new Date().getFullYear()} My Astro Site</p>
+  </footer>
+  <script>
+    // Client Only
 
-      const currentYear: number = new Date().getFullYear();
-      const momentoActual: string = new Date().toLocaleTimeString();
+    const currentYear: number = new Date().getFullYear();
+    const momentoActual: string = new Date().toLocaleTimeString();
 
-      const footer = document.querySelector("footer p");
-      const momentoElement = document.getElementById("moment");
+    const footer = document.querySelector("footer p");
+    const momentoElement = document.getElementById("moment");
 
-      if (footer) {
-        footer.textContent = `© ${currentYear} My Astro Site`;
-      }
+    if (footer) {
+      footer.textContent = `© ${currentYear} My Astro Site`;
+    }
 
-      if (momentoElement) {
-        momentoElement.textContent = `Momento Actual Real: ${momentoActual}`;
-      }
-    </script>
-  </body>
-</html>
+    if (momentoElement) {
+      momentoElement.textContent = `Momento Actual Real: ${momentoActual}`;
+    }
+  </script>
+</MainLayout>

@@ -1,19 +1,11 @@
 ---
-import Navbar from "../components/Navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html>
-  <head>
-    <title>About Us</title>
-    <meta name="description" content="Learn more about our team and mission." />
-  </head>
-  <body>
-    <Navbar />
-
-    <h1>About Us</h1>
-    <p>
-      Welcome to our about page! Here you can learn more about our team and
-      mission.
-    </p>
-  </body>
-</html>
+<MainLayout title="About Us">
+  <h1>About Us</h1>
+  <p>
+    Welcome to our about page! Here you can learn more about our team and
+    mission.
+  </p>
+</MainLayout>
