@@ -9,21 +9,11 @@ const name: string = "Astro";
   <h1>{name}</h1>
   <p>Momento Actual: {new Date().toLocaleTimeString()}</p>
   <p id="moment">Momento Actual Real:</p>
-  <footer>
-    <p>© {new Date().getFullYear()} My Astro Site</p>
-  </footer>
   <script>
     // Client Only
-
-    const currentYear: number = new Date().getFullYear();
     const momentoActual: string = new Date().toLocaleTimeString();
 
-    const footer = document.querySelector("footer p");
     const momentoElement = document.getElementById("moment");
-
-    if (footer) {
-      footer.textContent = `© ${currentYear} My Astro Site`;
-    }
 
     if (momentoElement) {
       momentoElement.textContent = `Momento Actual Real: ${momentoActual}`;
